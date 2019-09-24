@@ -2,17 +2,26 @@
   <head>
     <meta charset="UTF-8">
     <title>iris prediction</title>
+    <link rel="stylesheet" href="main.css">
   </head>
   <body>
-    <div id="app">
-    <label for="sepal_length">Sepal length:</label>
-    <input autofocus=true type="number" id="sepal_length" name="sepal_length" placeholder="(cm)">
-    <label for="sepal_width">Sepal width:</label>
-    <input type="number" id="sepal_width" name="sepal_width" placeholder="(cm)">
-    <label for="sepal_width">Petal length:</label>
-    <input type="number" id="petal_length" name="petal_length" placeholder="(cm)">
-    <label for="sepal_width">Petal width:</label>
-    <input type="number" id="petal_width" name="petal_width" placeholder="(cm)">
+    <div id="app" class="container">
+      <div>
+        <label for="sepal_length">Sepal length:</label>
+        <input autofocus=true type="number" id="sepal_length" name="sepal_length" placeholder="(cm)">
+      </div>
+      <div>
+        <label for="sepal_width">Sepal width:</label>
+        <input type="number" id="sepal_width" name="sepal_width" placeholder="(cm)">
+      </div>
+      <div>
+        <label for="sepal_width">Petal length:</label>
+        <input type="number" id="petal_length" name="petal_length" placeholder="(cm)">
+      </div>
+      <div>
+        <label for="sepal_width">Petal width:</label>
+        <input type="number" id="petal_width" name="petal_width" placeholder="(cm)">
+      </div>
     <button>Get iris!</button>
     </div>
     <script src="train/clf.js"></script>
