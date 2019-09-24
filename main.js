@@ -24,7 +24,7 @@ function returnIris(value) {
 
 function predict() {
   var inputArray = getInputArray();
-  var clf = new DecisionTreeClassifier();
+  var clf = new RandomForestClassifier();
   var numberedPrediction = clf.predict(inputArray);
   var prediction = returnIris(numberedPrediction);
   console.log(prediction);
