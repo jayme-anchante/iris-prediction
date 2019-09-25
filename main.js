@@ -13,20 +13,37 @@ function getInputArray() {
 function returnIris(value) {
   switch (value) {
     case 0:
-      return "Setosa";
+      return "setosa";
     case 1:
-      return "Versicolor";
+      return "versicolor";
     case 2:
-      return "Virginica";
+      return "virginica";
     default:
-      return "Other iris!";
+      return "not a valid iris...";
   }
 };
 
-function showResultText(prediction) {
-  var resultText = document.createTextNode(prediction);
+function createResultImg(prediction) {
+  var resultElementImg = document.createElement("img");
+  resultElementImg.setAttribute("src", "assets/"+prediction+".jpeg");
+  resultElementImg.setAttribute("alt", prediction);
+  resultElementImg.setAttribute("height", 100);
+  return resultElementImg
+};
+
+function createResultText(prediction) {
+  var resultElementDiv = document.createElement("div");
+  var resultElementText = document.createTextNode(prediction);
   resultElement.innerHTML = "";
-  resultElement.appendChild(resultText);
+  resultElementDiv.appendChild(resultElementText);
+  return resultElementDiv
+};
+
+function showResult(prediction) {
+  resultElementDiv = createResultText(prediction);
+  resultElementImg = createResultImg(prediction);
+  resultElement.appendChild(resultElementDiv);
+  resultElement.appendChild(resultElementImg);
 };
 
 function predict() {
@@ -34,7 +51,7 @@ function predict() {
   var clf = new RandomForestClassifier();
   var numberedPrediction = clf.predict(inputArray);
   var prediction = returnIris(numberedPrediction);
-  showResultText(prediction)
-}
+  showResult(prediction);
+};
 
 buttonElement.onclick = predict;
